@@ -7,9 +7,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 import available_json_fields
 import drugs_com_info
 
-global availablefields 
 availablefields = available_json_fields.fields_loader()
-global drugscom
 drugscom = drugs_com_info.load_drugs()
 
 def get_valid_fields_in_json(search_arr:list, dict_example:dict) -> list:
@@ -110,7 +108,7 @@ Answer: The purpose of Entyvio is to treat ulcerative colitis. (This information
         If you want to know more about Entyvio, you can visit the following link: https://www.drugs.com/entyvio.html
 """
 
-query = "What is the overdosage of Ibuprofen?"
+query = "How can I use Ibuprofen?"
 
 messages = [SystemMessage(system_message), HumanMessage(query)]
 
