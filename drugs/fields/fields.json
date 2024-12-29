@@ -1,0 +1,63 @@
+{
+  "fields": {
+    "when_to_use": [
+      "indications_and_usage",
+      "purpose",
+      "purpose_table"
+    ],
+    "when_not_to_use": [
+      "contraindications",
+      "contraindications_table",
+      "do_not_use",
+      "do_not_use_table"
+    ],
+    "side_effects": [
+      "adverse_reactions",
+      "adverse_reactions_table",
+      "warnings",
+      "warnings_table",
+      "boxed_warning",
+      "boxed_warning_table",
+      "precautions",
+      "precautions_table",
+      "general_precautions",
+      "general_precautions_table"
+    ],
+    "pregnancy": [
+      "pregnancy",
+      "pregnancy_table",
+      "pregnancy_or_breast_feeding",
+      "pregnancy_or_breast_feeding_table",
+      "teratogenic_effects",
+      "teratogenic_effects_table"
+    ],
+    "ingredients": [
+      "active_ingredient",
+      "active_ingredient_table",
+      "inactive_ingredient",
+      "inactive_ingredient_table",
+      "spl_product_data_elements",
+      "spl_product_data_elements_table"
+    ],
+    "how_to_use": [
+      "dosage_and_administration",
+      "dosage_and_administration_table",
+      "storage_and_handling",
+      "storage_and_handling_table",
+      "how_supplied",
+      "how_supplied_table"
+    ],
+    "abuse_and_overdosage": [
+      "abuse",
+      "abuse_table",
+      "controlled_substance",
+      "controlled_substance_table",
+      "dependence",
+      "dependence_table",
+      "drug_abuse_and_dependence",
+      "drug_abuse_and_dependence_table",
+      "overdosage",
+      "overdosage_table"
+    ]
+  }
+}

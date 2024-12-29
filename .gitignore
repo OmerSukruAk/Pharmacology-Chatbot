@@ -1,3 +1,4 @@
-Project Aim.docx
+*.docx
 .env
 *.ipynb
+*.pyc

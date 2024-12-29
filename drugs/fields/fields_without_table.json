@@ -1,0 +1,41 @@
+{
+  "fields": {
+    "when_to_use": [
+      "indications_and_usage",
+      "purpose"
+    ],
+    "when_not_to_use": [
+      "contraindications",
+      "do_not_use"
+    ],
+    "side_effects": [
+      "adverse_reactions",
+      "warnings",
+      "boxed_warning",
+      "precautions",
+      "general_precautions"
+    ],
+    "pregnancy": [
+      "pregnancy",
+      "pregnancy_or_breast_feeding",
+      "teratogenic_effects"
+    ],
+    "ingredients": [
+      "active_ingredient",
+      "inactive_ingredient",
+      "spl_product_data_elements"
+    ],
+    "how_to_use": [
+      "dosage_and_administration",
+      "storage_and_handling",
+      "how_supplied"
+    ],
+    "abuse_and_overdosage": [
+      "abuse",
+      "controlled_substance",
+      "dependence",
+      "drug_abuse_and_dependence",
+      "overdosage"
+    ]
+  }
+}
