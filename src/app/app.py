@@ -31,9 +31,9 @@ app = FastAPI()
 def parse_chat_history(chat_history: chat_history_format, user_message) -> list:
     messages = []
     for message in chat_history.messages:
-        if message["type"] == "system":
+        if message["role"] == "system":
             messages.append(SystemMessage(message["content"]))
-        elif message["type"] == "assistant":
+        elif message["role"] == "assistant":
             messages.append(AIMessage(message["content"]))
         else:
             messages.append(HumanMessage(message["content"]))
@@ -47,7 +47,7 @@ def chat(message: api_input_message_format, chat_history: chat_history_format):
     if chat_history.messages != []:
         messages = parse_chat_history(chat_history, message.message)
     else:
-        chat_history.messages = [{"type": "system", "content": system_message}]
+        chat_history.messages = [{"role": "system", "content": system_message}]
 
     ai_msg = llm_with_tools.invoke(messages)
     messages.append(ai_msg)
@@ -59,6 +59,6 @@ def chat(message: api_input_message_format, chat_history: chat_history_format):
         messages.append(tool_msg)
     resp = llm_with_tools.invoke(messages)
 
-    chat_history.messages.append({"type": "user", "content": message.message})
-    chat_history.messages.append({"type": "assistant", "content": str(resp.content)})
+    chat_history.messages.append({"role": "user", "content": message.message})
+    chat_history.messages.append({"role": "assistant", "content": str(resp.content)})
     return api_response_format(response=str(resp.content), chat_history=chat_history, functions_called=functions_called)
