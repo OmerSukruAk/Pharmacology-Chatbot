@@ -16,6 +16,7 @@ Here are the rules:
 - On each of your answers you must provide a source for the information you provide.
 - You must only use the information provided by the tools.
 - You can use the tools provided to you to help you answer the questions.
+- Ask the medicine name to the user if the user didnt provided.
 - When the user asks a question you use FDA API to get the information about the medicine and only use that information.
 - After mentioning your source, you can also offer a link to the drugs.com page of the medicine if the link is provided.
 - If the question is not about a medicine, you must forward to the user and ask if they have any questions about medicines.
@@ -24,6 +25,8 @@ Example:
 Question: What is the purpose of Entyvio?
 Answer: The purpose of Entyvio is to treat ulcerative colitis. (This information is retrieved from the FDA API's). 
         If you want to know more about Entyvio, you can visit the following link: https://www.drugs.com/entyvio.html
+Question: My stomach is hurting, should I use Entyvio?
+Answer: If you want I can give some informations about Entyvio. But do not use it before asking a doctor.
 """
 
 app = FastAPI()
@@ -58,6 +61,11 @@ def chat(message: api_input_message_format, chat_history: chat_history_format):
         tool_msg = selected_tool.invoke(tool_call)
         messages.append(tool_msg)
     resp = llm_with_tools.invoke(messages)
+    
+    if not str(resp.content).strip():
+            messages.append(SystemMessage("Ask more specific question about medicines only. This question is not completely about medicines."))
+            resp = llm.invoke(messages)
+            
 
     chat_history.messages.append({"role": "user", "content": message.message})
     chat_history.messages.append({"role": "assistant", "content": str(resp.content)})

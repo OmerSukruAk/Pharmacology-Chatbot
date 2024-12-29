@@ -24,17 +24,25 @@ st.title("Pharma Chatbot 🤖💊")
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-if prompt := st.chat_input("What is up?"):
-    
-    response = send_request(prompt, st.session_state.messages)
-    print(response["chat_history"]["messages"][-1]["content"])
-    
-    st.session_state.messages = response["chat_history"]["messages"]
-
 with st.chat_message("assistant"):
-        st.markdown("Hi there! 😊 *I’m your pharma chatbot,* here to answer your questions about medicines with accurate info from the **FDA API**, share links to **drugs.com** if available, and focus solely on medicines—*ask me anything!* 💊")
+        st.markdown("Hi there! 😊 *I’m your pharma chatbot,* here to answer your questions about medicines with accurate info from the **FDA API**, share links to **drugs.com** if available, and focus solely on medicines—*ask me anything!* 💊 Here are some example questions: \n * How should I use Ibuprofen? \n * How should I not use Ibuprofen? \n * Does Ibuprofen have side effects? \n * Can Ibuprofen be used in pregnancy?")
+
+
 
 for message in st.session_state.messages:
     if message["role"] == "system": continue
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
+
+if prompt := st.chat_input("What is up?"):
+    with st.chat_message("user"):
+        st.markdown(prompt)
+    with st.spinner("Thinking..."):
+        response = send_request(prompt, st.session_state.messages)
+        print(response)
+    with st.chat_message("assistant"):
+        st.markdown(response["chat_history"]["messages"][-1]["content"])
+        if len (response["chat_history"]["messages"]) >= 1:
+            st.markdown(f"Tools used: {response['functions_called']}")
+    st.session_state.messages = response["chat_history"]["messages"]
+
