@@ -19,3 +19,5 @@ In addition, the chatbot periodically scrapes data from drugs.com and provides l
   pip install -r requirements.txt
 
 
+### Special Thanks 🙏
+Thank you to **FDA** for providing such a wonderful open-source API, and to **drugs.com** for gathering and sharing all of this valuable information💊
