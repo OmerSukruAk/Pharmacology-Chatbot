@@ -8,6 +8,10 @@ In addition, the chatbot periodically scrapes data from drugs.com and provides l
 ![image](https://github.com/user-attachments/assets/b959fa41-cc7a-4e19-a96d-fa269efedcaa)
 </br></br>
 
+## Important API rules:
+* You cannot directly give some information and request a medicine name.
+* You should provide the medicine name and ask questions regarding that medicine.
+
 ## Frameworks:
 * Langchain
 * FastAPI
