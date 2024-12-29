@@ -7,7 +7,7 @@ This project leverages FDA's open-source APIs to provide answers to medicine-rel
 
 In addition, the chatbot periodically scrapes data from drugs.com and provides links where users can find more detailed information about the medicine directly on the website.
 
-## Used Frameworks:
+## Frameworks:
 * Langchain
 * FastAPI
 * Uvicorn
