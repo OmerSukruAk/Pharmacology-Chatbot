@@ -1,11 +1,16 @@
 # Medicine Information Retrieval System using LLMs (OpenAI GPT4o-mini)
 
-![image](https://github.com/user-attachments/assets/b959fa41-cc7a-4e19-a96d-fa269efedcaa)
-
 ## Project Aim  
-This project leverages FDA's open-source APIs to provide answers to medicine-related questions. The API responses act as the knowledge base for this system, ensuring accurate and up-to-date information.  
+This project leverages FDA's(US Food & Drug Administration) open-source APIs to provide answers to medicine-related questions. The API responses act as the knowledge base for this system, ensuring accurate and up-to-date information.  
 
 In addition, the chatbot periodically scrapes data from drugs.com and provides links where users can find more detailed information about the medicine directly on the website.
+</br></br></br>
+![image](https://github.com/user-attachments/assets/b959fa41-cc7a-4e19-a96d-fa269efedcaa)
+</br></br>
+
+## Important API rules:
+* You cannot directly give some information and request a medicine name.
+* You should provide the medicine name and ask questions regarding that medicine.
 
 ## Frameworks:
 * Langchain
