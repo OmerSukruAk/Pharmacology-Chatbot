@@ -19,7 +19,7 @@ In addition, the chatbot periodically scrapes data from drugs.com and provides l
 
 ## Running Steps:
 * python run.py (the app must be in this address: http://127.0.0.1:8000/chat)
-* streamlit run frontend. 
+* streamlit run frontend.py. 
 
 ## Requirements  
 - **Python Version**: 3.11.7  
