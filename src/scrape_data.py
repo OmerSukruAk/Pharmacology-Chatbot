@@ -41,4 +41,4 @@ def get_all_drugs(url:str) -> pd.DataFrame:
     return all_drugs
 
 all_drugs = get_all_drugs(url = "https://www.drugs.com/alpha/")
-all_drugs.to_csv("all_drugs.csv", index=False)
+all_drugs.to_csv("src/drugs/drug_files/all_drugs.csv", index=False)
