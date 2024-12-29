@@ -5,6 +5,11 @@ This project leverages FDA's open-source APIs to provide answers to medicine-rel
 
 In addition, the chatbot periodically scrapes data from drugs.com and provides links where users can find more detailed information about the medicine directly on the website.
 
+## Used Frameworks:
+* Langchain
+* FastAPI
+* Uvicorn
+
 ## Requirements  
 - **Python Version**: 3.11.7  
 - **Dependencies**: All required libraries and their respective versions are listed in the `requirements.txt` file. To install them, run the following command:  
